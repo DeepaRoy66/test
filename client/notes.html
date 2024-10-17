@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  
+  <!-- External scripts and stylesheets -->
+  <script src="loadFooter.js" defer></script> <!-- Footer script to load dynamically -->
+  <link rel="stylesheet" href="style.css"> <!-- Main stylesheet for your page -->
+  <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!-- FontAwesome icons -->
+  <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script> <!-- FontAwesome Kit -->
+
+  <style>
+    /* Error message styling */
+    .error-message {
+      color: red;
+      font-size: 0.9em;
+    }
+
+    /* Note card styling */
+    .notes-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .note-card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 300px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .note-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .note-card h4 {
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    .note-card p {
+      color: #333;
+      margin: 5px 0;
+    }
+
+    .note-card a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #fff;
+      background-color: orange;
+      padding: 8px 16px;
+      border-radius: 4px;
+    }
+
+    .note-card a:hover {
+      background-color: black;
+    }
+
+    .delete-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #ff4d4d;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .delete-btn:hover {
+      background-color: #e60000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header section with navigation -->
+  <header>
+    <h2 class="logo">IT SCHOLAR NOTE</h2> <!-- Your logo -->
+    <nav class="navigation">
+      <!-- Navigation links -->
+      <a href="home.html" class="home-link">Home</a>
+      <a href="syllabus.html" class="syllabus-link">Syllabus</a>
+      <a href="semester.html" class="semester-link">List of Semester</a>
+      <a href="question.html" class="question-link">Question Paper</a>
+      <a href="contact.html" class="contact-link">Contact</a>
+      <a href="notes.html" class="notes-link">Notes</a>
+
+      <!-- Profile dropdown for admin functionalities -->
+      <div class="profile-dropdown">
+        <div onclick="toggle()" class="profile-dropdown-btn">
+          <div class="profile-img">
+            <i class="fa-solid fa-circle"></i>
+          </div>
+          <span>Admin <i class="fa-solid fa-angle-down"></i></span>
+        </div>
+
+        <!-- Dropdown list -->
+        <ul class="profile-dropdown-list">
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              Edit Profile
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-envelope"></i>
+              Inbox
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-chart-line"></i>
+              Analytics
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-sliders"></i>
+              Settings
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-circle-question"></i>
+              Help & Support
+            </a>
+          </li>
+          <hr />
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- Hamburger menu for mobile -->
+    <button class="menu-toggle">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </header>
+
+  <!-- Main content for notes -->
+  <div class="notes-container">
+    <h2>About Notes</h2>
+    <p>We have a collection of notes on various subjects. You can find detailed notes by students here.
+      Notes are uploaded by students on their own. And those notes can be available after doing the payment process
+      through eSewa. Notes price start from Rs. 50. This is an opportunity for students to sell their notes and earn
+      money while studying.
+    </p>
+
+    <!-- Form to upload notes -->
+    <h3>Upload Your Notes</h3>
+    <div class="upload-section">
+      <form action="upload_notes.php" method="POST" enctype="multipart/form-data">
+        <label for="note-title">Note Title:</label>
+        <input type="text" id="note-title" name="note_title" required placeholder="Enter the title of your note">
+
+        <label for="note-file">Choose Note File (PDF, DOC, etc.):</label>
+        <input type="file" id="note-file" name="note_file" accept=".pdf,.doc,.docx" required>
+
+        <label for="note-price">Set Price (Rs):</label>
+        <input type="number" id="note-price" name="note_price" min="50" required placeholder="Set your note price">
+
+        <input type="submit" value="Upload Note">
+      </form>
+    </div>
+
+    <!-- Section where uploaded notes will be displayed dynamically -->
+    <div class="uploaded-notes">
+      <h3>Uploaded Notes</h3>
+      <div class="notes-list" id="notes-list">
+        <!-- Uploaded notes will appear here dynamically -->
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Script that handles the logic for toggling the dropdown, note upload, and fetching notes -->
+  <script src="script.js"></script>
+</body>
+
+</html>

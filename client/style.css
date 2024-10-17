@@ -1,0 +1,1713 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: url(img/notelogo.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+header{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 20px 100px;
+   background: orange;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 99;
+}
+
+.logo{
+  font-size: 1.9em;
+  color: #f0f0f0;
+  user-select: none;
+
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  
+}
+ .navigation a{
+  position: relative;
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+ }
+
+ .navigation a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.navigation a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+ .btnLogin-popup{
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+.btnLogin-popup:hover{
+  background: #fff;
+  color: #162938;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  top: 100px;
+  right: 100px;
+  float: right;
+}
+
+/* Section Styles */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  width: 50%;
+  background: url("img/notelogo.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Form Styles */
+.form-box {
+  position: absolute;
+  width: 400px;
+  height: 450px;
+  background: transparent;
+  border: none;
+  border-radius: 20px;
+  backdrop-filter: blur(15px) brightness(80%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.form-box h2{
+  font-size: 1.8em;
+  color:#fff;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.icon-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.inputbox {
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+input:focus~label,
+input:valid~label {
+  top: -5px;
+}
+
+.inputbox input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding: 0 35px 0 5px;
+  color: #fff;
+}
+
+.inputbox ion-icon {
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.2em;
+  top: 20px;
+}
+
+.remember-forgot {
+  margin: -15px 0 15px;
+  font-size: .9em;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  display: flex;
+  
+}
+
+.remeber-forgot label input {
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remeber-forgot a:hover {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 1124px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  .logo{
+    font-size: 1em;
+    color: #f0f0f0;
+  user-select: none;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(22, 21, 22, 0.9);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    transform: translateY(-100%);
+  }
+
+  .navigation.active {
+    transform: translateY(0);
+  }
+
+  .navigation a {
+    margin: 15px 0;
+    font-size: 1.5em;
+  }
+
+  .btnLogin-popup {
+    margin top: 5px;
+  }
+
+  .menu-toggle {
+    display: block;
+
+    .form-box {
+      width: 90%;
+      padding: 20px;
+      margin-top: 40px; /* Increase this value if you need more spacing on smaller screens */
+    }
+  }
+
+  .inputbox {
+    width: 100%;
+  }
+
+  section {
+    width: 100%;
+    min-height: 60vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navigation a {
+    font-size: 1.2em;
+  }
+
+  .btnLogin-popup {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+
+  .form-box {
+    padding: 10px;
+  }
+
+  .inputbox {
+    margin: 20px 0;
+  }
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: url(img/notelogo.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+header{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 20px 100px;
+   background: orange;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 99;
+}
+
+.logo{
+  font-size: 1.9em;
+  color: #f0f0f0;
+  user-select: none;
+
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  
+}
+ .navigation a{
+  position: relative;
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+ }
+
+ .navigation a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.navigation a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+ .btnLogin-popup{
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+.btnLogin-popup:hover{
+  background: #fff;
+  color: #162938;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  top: 100px;
+  right: 100px;
+  float: right;
+}
+
+/* Section Styles */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  width: 50%;
+  background: url("img/notelogo.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Form Styles */
+.form-box {
+  position: absolute;
+  width: 400px;
+  height: 450px;
+  background: transparent;
+  border: none;
+  border-radius: 20px;
+  backdrop-filter: blur(15px) brightness(80%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.form-box h2{
+  font-size: 1.8em;
+  color:#fff;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.icon-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.inputbox {
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+input:focus~label,
+input:valid~label {
+  top: -5px;
+}
+
+.inputbox input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding: 0 35px 0 5px;
+  color: #fff;
+}
+
+.inputbox ion-icon {
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.2em;
+  top: 20px;
+}
+
+.remember-forgot {
+  margin: -15px 0 15px;
+  font-size: .9em;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  display: flex;
+  
+}
+
+.remeber-forgot label input {
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remeber-forgot a:hover {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 1124px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  .logo{
+    font-size: 1em;
+    color: #f0f0f0;
+  user-select: none;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(22, 21, 22, 0.9);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    transform: translateY(-100%);
+  }
+
+  .navigation.active {
+    transform: translateY(0);
+  }
+
+  .navigation a {
+    margin: 15px 0;
+    font-size: 1.5em;
+  }
+
+  .btnLogin-popup {
+    margin top: 5px;
+  }
+
+  .menu-toggle {
+    display: block;
+
+    .form-box {
+      width: 90%;
+      padding: 20px;
+      margin-top: 40px; /* Increase this value if you need more spacing on smaller screens */
+    }
+  }
+
+  .inputbox {
+    width: 100%;
+  }
+
+  section {
+    width: 100%;
+    min-height: 60vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navigation a {
+    font-size: 1.2em;
+  }
+
+  .btnLogin-popup {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+
+  .form-box {
+    padding: 10px;
+  }
+
+  .inputbox {
+    margin: 20px 0;
+  }
+}
+
+
+
+
+/*home page start */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 500%;
+  background: url(img/notelogo.jpg);
+  background-position: center;
+  background-size: cover;
+  padding-top: 80px;
+  /* To account for fixed header */
+}
+
+.hero_section {
+  width: 104;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  padding-top: 200px;
+}
+
+.hero_container {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+}
+
+.text_section {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  text-align: center;
+}
+
+.text_section h2 {
+  color: orange;
+  font-size: 40px;
+  
+}
+
+.text_section h3 {
+  color: rgb(11, 12, 1);
+  font-size: 32px;
+  padding: 50px 20px;
+}
+
+.text_section p {
+  font-size: 20px;
+}
+
+.hero_section_button {
+  padding-top: 20px;
+}
+
+.image_section {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_container img {
+  width: 60%;
+  height: 60%;
+  border-radius: 110px;
+  border: 10px solid white;
+}
+
+.hero_section_button .button {
+  padding: 8px 28px;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background-image: url(img/notelogo.jpg);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.hero_section_button .button:last-child {
+  color: whitesmoke;
+  border-color: black;
+  background: none;
+}
+
+.hero_section_button .button:first-child:hover {
+  color: whitesmoke;
+  background: transparent;
+  border-color: whitesmoke;
+}
+
+.hero_section_button .button:last-child:hover {
+  color: rgba(235, 162, 28, 0.841);
+  background: rgba(189, 186, 180, 0.267);
+}
+
+
+
+
+/* home page below side */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.good_container {
+  width: 102%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f0f0f0;
+  padding: 20px;
+  gap: 30px;
+  margin-top: 20px;
+
+}
+
+
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+
+.card h2 {
+  font-size: 1.5em;
+  margin: 16px 0;
+  color: #162938;
+}
+
+.card p {
+  color: #555;
+  font-size: 1em;
+  padding: 0 16px 16px;
+}
+
+/*footer start*/
+footer {
+  width: 102%;
+  background: #343434;
+  padding-top: 50px;
+}
+
+.foot_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f0f0f0;
+  padding: 100px;
+  gap: 70px;
+  margin-top: 70px;
+  background-color: #f0f0f0;
+}
+
+.footer-content {
+  width: 100%;
+}
+
+h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.footer-content p {
+  width: 190px;
+  margin: auto;
+  padding: 7px;
+}
+
+.footer-content ul {
+  text-align: center;
+}
+
+.list {
+  padding: 0;
+}
+
+.list li {
+  width: auto;
+  text-align: center;
+  list-style-type: none;
+  padding: 7px;
+  position: relative;
+}
+
+.list li::before {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 100%;
+  width: 0;
+  height: 2px;
+  background: #f18930;
+  transition-duration: .5s;
+}
+
+.list li:hover::before {
+  width: 70px;
+}
+
+.social-icons {
+  text-align: center;
+  padding: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  text-align: center;
+  padding: 60px;
+}
+
+.social-icons i {
+  color: rgb(181, 24, 24);
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f18930;
+}
+
+.social-icons i:hover {
+  color: #f18930;
+}
+
+.bottom-bar {
+  background: #f18930;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 50px;
+}
+
+.bottom-bar p {
+  color: #343434;
+  margin: 0;
+  font-size: 16px;
+  padding: 7px;
+}
+
+footer {
+  background: #343434;
+  padding-top: 50px;
+}
+
+.container {
+  width: 1240px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  width: 44.4%;
+}
+
+h3 {
+  font-size: 28px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.footer-content p {
+  width: 190px;
+  margin: auto;
+  padding: 7px;
+}
+
+.footer-content ul {
+  text-align: center;
+}
+
+.list {
+  padding: 0;
+}
+
+.list li {
+  width: auto;
+  text-align: center;
+  list-style-type: none;
+  padding: 7px;
+  position: relative;
+}
+
+.list li::before {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 100%;
+  width: 0;
+  height: 2px;
+  background: #f18930;
+  transition-duration: .5s;
+}
+
+.list li:hover::before {
+  width: 70px;
+}
+
+.social-icons {
+  text-align: center;
+  padding: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+}
+
+.social-icons i {
+  color: white;
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f18930;
+}
+
+.social-icons i:hover {
+  color: #f18930;
+}
+
+.bottom-bar {
+  background: #f18930;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 50px;
+}
+
+.bottom-bar p {
+  color: #343434;
+  margin: 0;
+  font-size: 16px;
+  padding: 7px;
+}
+
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 80.5vh;
+  padding: 2rem;
+  background-color: #fafafa;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.form {
+  width: 100%;
+  max-width: 820px;
+  background-color: orange;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+
+.contact-form {
+  background-color: orange;
+  position: relative;
+  height: 70vh;
+
+}
+
+.circle {
+  border-radius: 50%;
+  background: linear-gradient(135deg, transparent 20%, orange);
+  position: absolute;
+}
+
+.contact-info {
+  padding: 2.3rem 2.2rem;
+  position: relative;
+}
+
+.contact-info .title {
+  color: black;
+}
+
+.icon {
+  width: 28px;
+  margin-right: 0.7rem;
+}
+
+.social-media {
+  padding: 2rem 0 0 0;
+}
+
+.social-media p {
+  color: #333;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.social-icons a {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  background: linear-gradient(45deg, black, black);
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 0.5rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.05);
+}
+
+.social-media {
+  padding: 1.5rem 0 0 0;
+}
+}
+
+.social-icons a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.icon {
+  width: 23px;
+}
+
+.contact-form {
+  background-color: orange;
+  position: relative;
+
+}
+
+.circle {
+  border-radius: 50%;
+  background: linear-gradient(135deg, transparent 20%, orange);
+  position: absolute;
+}
+
+.circle.one {
+  width: 130px;
+  height: 130px;
+  top: 130px;
+  right: -40px;
+}
+
+.circle.two {
+  width: 80px;
+  height: 80px;
+  top: 10px;
+  right: 30px;
+}
+
+.contact-form:before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-color: orange;
+  transform: rotate(45deg);
+  top: 50px;
+  left: -13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*contact*/
+.contact-form-container {
+  background-color: #ffffff;
+  padding: 0.5px 30px;
+  border-radius: 100px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  width: 400px;
+
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-header img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.form-header h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #2C3E50;
+}
+
+.form-header p {
+  color: black;
+  font-size: 14px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2C3E50;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form button:hover {
+  background-color: black;
+}
+
+
+
+
+
+
+/* Style for the hero_section h1 */
+.hero_section h1 {
+  margin-top: -100px; /* Adjust the value to move it up or down as needed */
+  padding: 10px 0;
+  text-align: center;
+  font-size: 36px;
+  color: white;
+}
+
+
+
+
+
+
+/*syllabus */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.heros_section {
+  width: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px; 
+}
+
+.heros_container {
+  display:flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start;
+  background-color:white;
+  padding: 40px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.description, .sub-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify;
+  padding: 40px;
+}
+
+
+
+
+
+
+
+/* Style for the dropdown menu */
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  min-width: 250px;
+  box-shadow: black;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: orange;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .semester-link {
+  background-color: orange;
+}
+
+
+
+//syllabus ko list haru
+.sem {
+  padding: 20px;
+}
+
+.semester-title {
+  margin: 20px 40px;
+  cursor: pointer;
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.semester-title:hover {
+  color: orange; /* Change color on hover (e.g., to a blue shade) */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.subject-list {
+  list-style-type: none;
+  padding-left: 20px;
+  display: none; /* Initially hidden */
+}
+
+.subject-list li {
+  margin: 5px 0;
+}
+
+.subject-list li i {
+  margin-right: 10px; /* Space between the icon and the text */
+  color: orange; /* Icon color */
+}
+
+
+.file-content {
+  display: none; /* Hidden by default */
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+
+
+
+
+/* Note page suru */
+.notes-container {
+  width: 200%;
+  height: 500vh;
+  padding: 150px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.notes-container h2 {
+  font-size: 28px;
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.notes-container p {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+/* Upload Section Styling */
+.upload-section {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px;
+}
+
+ h3 {
+  margin-bottom: 25px;
+  padding: 20px;
+  color:black;
+}
+
+.upload-section label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.upload-section input[type="text"],
+.upload-section input[type="file"],
+.upload-section input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.upload-section input[type="submit"] {
+  background-color:orange;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-section input[type="submit"]:hover {
+  background-color: black;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navigation {
+      display: block;
+      float: none;
+      text-align: center;
+  }
+  .notes-container {
+      width: 100%;
+      margin: 0 auto;
+  }
+}
+
+
+
+/*studentprofile
+*/
+
+:root {
+  --primary: #eeeeee;
+  --secondary: orange;
+  --white: white;
+  --secondary-light: rgb(34, 124, 112, 0.2);
+  --secondary-light-2: rgb(127, 183, 126, 0.1);
+  --white: #fff;
+  --black: #393e46;
+
+  --shadow: 0px 2px 8px 0px var(--secondary-light);
+}
+.profile-dropdown {
+  position: relative;
+  width: fit-content;
+}
+
+.profile-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 150px;
+  border-radius: 50px;
+  color: var(--black);
+ background-color: orange;
+  box-shadow: var(--shadow); 
+
+  cursor: pointer;
+  border: 1px solid var(--secondary);
+  transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+    border 0.3s;
+}
+
+.profile-dropdown-btn:hover {
+  background-color: var(--secondary-light-2);
+  box-shadow: var(--shadow);
+}
+
+.profile-img {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: url(/client/img/notelogo.jpg);
+  background-size: cover;
+}
+
+.profile-img i {
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+  font-size: 0.5rem;
+  color: var(--white);
+}
+
+.profile-dropdown-btn span {
+  margin: 0 0.5rem;
+  margin-right: 0;
+}
+
+.profile-dropdown-list {
+  position: absolute;
+  top: 68px;
+  width: 220px;
+  right: 10px; /* Adjust this value to shift the menu to the right */
+  background-color: var(--white);
+  border-radius: 10px;
+  max-height: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: max-height 0.5s;
+}
+
+
+.profile-dropdown-list hr {
+  border: 0.5px solid var(--green);
+}
+
+.profile-dropdown-list.active {
+  max-height: 500px;
+}
+
+.profile-dropdown-list-item {
+  padding: 0.5rem 0rem 0.5rem 1rem;
+  transition: background-color 0.2s ease-in, padding-left 0.2s;
+}
+
+.profile-dropdown-list-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.profile-dropdown-list-item a i {
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: var(--secondary);
+  color: var(--white);
+  line-height: 2.3rem;
+  text-align: center;
+  margin-right: 1rem;
+  border-radius: 50%;
+  transition: margin-right 0.3s;
+}
+
+.profile-dropdown-list-item:hover {
+  padding-left: 1.5rem;
+  background-color: var(--secondary-light);
+}
+
+
+
+
+
+
+
+
+
+/* QUestion suru */
+.question-container {
+  width: 200%;
+  height: 200vh;
+  padding: 150px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+
+}
+
+.question-container h2 {
+  font-size: 30px;
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question-container p {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+.note-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.notes-card {
+  background-color: white;
+  display: flex;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+.notes-card img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.notes-content {
+  flex-grow: 1;
+}
+
+
+
+h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1em;
+  color: #555;
+}
+
+.note-actions {
+  margin-top: 10px;
+}
+
+.note-actions span {
+  font-size: 0.9em;
+  margin-right: 20px;
+}
+
+
+
+
+
+.small-card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.small-card {
+  background-color: orange;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.small-card h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

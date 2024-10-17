@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT SCHOLAR NOTE - Home</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="esewa.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <h2 class="logo">IT SCHOLAR NOTE</h2>
+        <nav class="navigation">
+            <a href="home.html" class="home-link">Home</a>
+            <a href="syllabus.html" class="syllabus-link">Syllabus</a>
+            <div class="dropdown">
+                <a href="semester.html" class="semester-link">List of Semester</a>
+                <div class="dropdown-content">
+                    <a href="first_semester.html">First Semester</a>
+                    <a href="second_semester.html">Second Semester</a>
+                    <a href="third_semester.html">Third Semester</a>
+                    <a href="fourth_semester.html">Fourth Semester</a>
+                    <a href="fifth_semester.html">Fifth Semester</a>
+                    <a href="sixth_semester.html">Sixth Semester</a>
+                    <a href="seventh_semester.html">Seventh Semester</a>
+                    <a href="eighth_semester.html">Eighth Semester</a>
+                </div>
+            </div>
+            <a href="question.html" class="question-link">Question Paper</a>
+            <a href="contact.html" class="contact-link">Contact</a>
+            <a href="notes.html" class="notes-link">Notes</a>
+            
+            <!-- Profile Dropdown -->
+            <div class="profile-dropdown">
+                <div onclick="toggleProfileDropdown()" class="profile-dropdown-btn">
+                    <div class="profile-img">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <span>
+                        Admin
+                        <i class="fa-solid fa-angle-down"></i>
+                    </span>
+                </div>
+
+                <ul class="profile-dropdown-list">
+                    <li><a href="#"><i class="fa-regular fa-user"></i> Edit Profile</a></li>
+                    <li><a href="#"><i class="fa-regular fa-envelope"></i> Inbox</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chart-line"></i> Analytics</a></li>
+                    <li><a href="#"><i class="fa-solid fa-sliders"></i> Settings</a></li>
+                    <li><a href="#"><i class="fa-regular fa-circle-question"></i> Help & Support</a></li>
+                    <hr>
+                    <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    
+            <div class="container">
+            
+            <div class="enrollment-container">
+                <h1>Complete your payment</h1>
+            
+                
+            
+                
+                <div class="payment-methods">
+                    <div class="payment-option">
+                        <img src="img/eswea.webp" alt="eSewa">
+                    </div>
+                    
+                </div>
+            
+                <p class="payment-instructions">Click below to proceed payment</p>
+                <button class="proceed-btn">Proceed to Payment</button>
+            </div>
+        </div>
+            
+
+    <script>
+        function toggleProfileDropdown() {
+            const dropdown = document.querySelector('.profile-dropdown-list');
+            dropdown.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

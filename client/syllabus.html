@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus</title>
+    <script src="loadFooter.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h2 class="logo">IT SCHOLAR NOTE</h2>
+    <nav class="navigation">
+      <a href="home.html" class="home-link">Home</a>
+      <a href="syllabus.html" class="syllabus-link">Syllabus</a>
+      <div class="dropdown">
+        <a href="semester.html" class="semester-link">List of Semester</a>
+        <div class="dropdown-content">
+          <a href="first_semester.html">First Semester</a>
+          <a href="second_semester.html">Second Semester</a>
+          <a href="third_semester.html">Third Semester</a>
+          <a href="fourth_semester.html">Fourth Semester</a>
+          <a href="fifth_semester.html">Fifth Semester</a>
+          <a href="sixth_semester.html">Sixth Semester</a>
+          <a href="seventh_semester.html">Seventh Semester</a>
+          <a href="eighth_semester.html">Eighth Semester</a>
+
+          <!-- Add more semesters as needed -->
+        </div>
+      </div>
+      <a href="question.html" class="question-link">Question Paper</a>
+      <a href="contact.html" class="contact-link">Contact</a>
+      <a href="notes.html" class="notes-link">Notes</a>
+      <div class="profile-dropdown">
+        <div onclick="toggle()" class="profile-dropdown-btn">
+          <div class="profile-img">
+            <i class="fa-solid fa-circle"></i>
+          </div>
+
+          <span
+            >Admin
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+
+        <ul class="profile-dropdown-list">
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              Edit Profile
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-envelope"></i>
+              Inbox
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-chart-line"></i>
+              Analytics
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-sliders"></i>
+              Settings
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-circle-question"></i>
+              Help & Support
+            </a>
+          </li>
+          <hr />
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <button class="menu-toggle">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </header>
+
+  <section class="heros_section">
+    <div class="heros_container">
+      <div class="texts_section">
+        <h1 class="title">B.Tech.Ed.IT Syllabus</h1>
+        <p class="description">
+          The B.Tech Ed IT is an innovative and interdisciplinary program that merges the fields of education,
+          technology, and information technology. This program is designed to equip students with both the
+          technical expertise and the pedagogical knowledge needed to design, develop, and implement
+          educational technologies that enhance learning experiences in various contexts.
+
+          The curriculum is a blend of core IT subjects and educational theory. On the IT side, students learn
+          the fundamentals of programming languages like C, Java, and Python, which are essential for
+          developing software and applications. They also delve into web development, database management, and
+          computer networks, all of which provide the technical foundation necessary for building robust
+          educational platforms.
+          A key component of the program is software engineering, where students learn the principles of
+          designing, developing, and maintaining software systems. This knowledge is crucial when creating
+          educational tools that are both effective and user-friendly. Courses in data structures and
+          algorithms help students develop problem-solving skills, while subjects like cloud computing and
+          cybersecurity prepare them to work with modern, scalable, and secure educational technologies.
+          In addition to technical and theoretical knowledge, the program also emphasizes the development of
+          soft skills like communication, leadership, and management, which are essential for those looking to
+          lead educational initiatives or manage technology projects within educational institutions.
+
+          Overall, the B.Tech Ed IT is designed to produce graduates who are well-versed in both technology
+          and education, capable of bridging the gap between these fields to create innovative solutions that
+          improve teaching and learning processes.
+          <br><br><br>The details about each subject/course content along with the marking scheme can be
+          accessed by clicking on the semesters.
+
+        </p>
+
+        <div class="sem">
+          <h1 class="semester-title" onclick="toggleSubjects('first-semester')">First Semester Syllabus</h1>
+          <ul id="first-semester" class="subject-list">
+            <li><i class="fas fa-folder"></i> <a href="" target="_blank">The Teaching Profession</a></li>
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">Principles and methods of technical instruction</a></li>
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">Information System</a></li>
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">Software Development</a></li>
+            <li><i class="fas fa-folder"></i><a href="Co" target="_blank">Computer Programming using C</a>Sub</li>
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">Professional Issues in IS practices</a></li>
+          </ul>
+
+          <h1 class="semester-title" onclick="toggleSubjects('second-semester')">Second Semester Syllabus</h1>
+          <ul id="second-semester" class="subject-list">
+            <li><i class="fas fa-folder"></i> <a href="syllabus/Communication Skills.pdf" target="_blank">Communication Skills</a></li>
+            <li><i class="fas fa-folder"></i> <a href="syllabus/Instructional System Design.pdf" target="_blank">Instructional System Design</a></li>
+            <li><i class="fas fa-folder"></i> <a href="syllabus/Database System.pdf" target="_blank">Database System</a></li>
+            <li><i class="fas fa-folder"></i> <a href="syllabus/Digital Logic.pdf" target="_blank">Digital Logic</a></li>
+            <li><i class="fas fa-folder"></i> <a href="syllabus/Object Oriented Programming.pdf" target="_blank">Object Oriented Programming</a></li>
+            <li><i class="fas fa-folder"></i> <a href="syllabus/Computer Maintenance and Troubleshooting.pdf" target="_blank">Computer Maintenance and Troubleshooting</a></li>
+            <li><i class="fas fa-folder"></i> <a href="syllabus/Probability and Statistics.pdf" target="_blank">Probability and Statistics</a></li>
+          </ul>
+          <h1 class="semester-title" onclick="toggleSubjects('third-semester')">Third Semester Syllabus</h1>
+          <ul id="third-semester" class="subject-list">
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">Educational Psychology</a></li>
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">Instructional Skills(I)</a></li>
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">IT Project Management</a></li>
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">Computer Networks</a></li>
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">Microprocessor and Computer Architecture</a></li>
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">Principles of Internet Technologies and Web Applications</a></li>
+            <li><i class="fas fa-folder"></i> <a href="Communication Skills.pdf" target="_blank">Data Structure and Algorithm</a></li>            
+            <li><i class="fas fa-folder"></i>Subject 3</li>
+          </ul>
+          <h1 class="semester-title" onclick="toggleSubjects('fourth-semester')">Fourth Semester Syllabus</h1>
+          <ul id="fourth-semester" class="subject-list">
+            <li><i class="fas fa-folder"></i> <a href="EDUC 300 Curriculum Development.pdf" target="_blank">Nepali</a></li>
+            <li><i class="fas fa-folder"></i> <a href="EDUC 300 Curriculum Development.pdf" target="_blank">Operating System</a></li>
+            <li><i class="fas fa-folder"></i> <a href="EDUC 300 Curriculum Development.pdf" target="_blank">E-Learning Management System</a></li>
+            <li><i class="fas fa-folder"></i> <a href="EDUC 300 Curriculum Development.pdf" target="_blank">Computer Graphics and Multimedia</a></li>
+            <li><i class="fas fa-folder"></i> <a href="EDUC 300 Curriculum Development.pdf" target="_blank">System Analysis and Design</a></li>
+            <li><i class="fas fa-folder"></i> <a href="EDUC 300 Curriculum Development.pdf" target="_blank">Research Methods for Computing and Technology</a></li>
+            <li><i class="fas fa-folder"></i> <a href="EDUC 300 Curriculum Development.pdf" target="_blank">Instructional Skills</a></li>
+          </ul>
+          <h1 class="semester-title" onclick="toggleSubjects('fifth-semester')">Fifth Semester Syllabus</h1>
+          <ul id="fifth-semester" class="subject-list">
+            <li><i class="fas fa-folder"></i> <a href="syllabus/EDUC 300 Curriculum Development.pdf" target="_blank">Curriculum Development</a></li>
+            <li><i class="fas fa-folder"></i> <a href="syllabus/VPED 300 Designing Occupational Curriculum.pdf" target="_blank">Designing Occupational Curriculum</a></li>
+            <li><i class="fas fa-folder"></i> <a href="syllabus/VPED 301 TVET Ecosystem in Nepal.pdf" target="_blank">TVET Ecosystem in Nepal</a></li>
+            <li><i class="fas fa-folder"></i> <a href="EDUC 300 Curriculum Development.pdf" target="_blank">Web Engineering</a></li>
+            <li><i class="fas fa-folder"></i> <a href="" target="_blank">Software Engineering</a></li>
+            <li><i class="fas fa-folder"></i> <a href="EDUC 300 Curriculum Development.pdf" target="_blank">System Network and Administration</a></li>
+            <li><i class="fas fa-folder"></i> <a href="EDUC 300 Curriculum Development.pdf" target="_blank">Management Information System</a></li>
+            <li><i class="fas fa-folder"></i> <a href="ITEX 340 Professional IT Project I.pdf" target="_blank">Professional IT Project 1</a></li>
+          </ul>
+          <h1 class="semester-title" onclick="toggleSubjects('sixth-semester')">Sixth Semester Syllabus</h1>
+          <ul id="sixth-semester" class="subject-list">
+            <li><i class="fas fa-folder"></i>Subject 1</li>
+            <li><i class="fas fa-folder"></i>Subject 2</li>
+            <li><i class="fas fa-folder"></i>Subject 3</li>
+          </ul>
+          <h1 class="semester-title" onclick="toggleSubjects('seventh-semester')">Seventh Semester Syllabus</h1>
+          <ul id="seventh-semester" class="subject-list">
+            <li><i class="fas fa-folder"></i>Subject 1</li>
+            <li><i class="fas fa-folder"></i>Subject 2</li>
+            <li><i class="fas fa-folder"></i>Subject 3</li>
+          </ul>
+
+          <h1 class="semester-title" onclick="toggleSubjects('eighth-semester')">Eighth Semester Syllabus</h1>
+          <ul id="eighth-semester" class="subject-list">
+            <li><i class="fas fa-folder"></i>Subject 1</li>
+            <li><i class="fas fa-folder"></i>Subject 2</li>
+            <li><i class="fas fa-folder"></i>Subject 3</li>
+          </ul>
+
+        </div>
+
+
+        <!-- Hidden divs to hold the files -->
+        <div id="file1" class="file-content">
+          <a href="file1.pdf.pdf" target="_blank">Download Subject 1 File</a>
+        </div>
+
+
+        <!--footer starts-->
+        <footer>
+          <div class="foot_container">
+            <div class="footer-content">
+              <h3>Contact Us</h3>
+              <p>Email:scti.sindhuli@gmail.com</p>
+              <p>Phone:98888888888</p>
+              <p>Address:Nunthala,Sindhuli</p>
+            </div>
+            <div class="footer-content">
+              <h3>Quick Links</h3>
+              <ul class="list">
+                <li><a href="">Home</a></li>
+                <li><a href="">Syllabus</a></li>
+                <li><a href="">List of semester</a></li>
+                <li><a href="">Question Paper</a></li>
+                <li><a href="">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-content">
+              <h3>Follow Us</h3>
+              <ul class="social-icons">
+                <li><a href="https://www.facebook.com/profile.php?id=100053642767299"><i
+                      class="fab fa-facebook"></i></a>
+                </li>
+                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="bottom-bar">
+            <p>&copy; 2024 your company . All rights reserved</p>
+          </div>
+        </footer>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
